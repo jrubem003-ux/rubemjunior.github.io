@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reward Site</title>
+
+<!-- 🔥 FIREBASE (colar config aqui depois)
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+-->
+
+<style>
+body{
+  margin:0;
+  background:#0e0e14;
+  color:#fff;
+  font-family:Arial;
+}
+header{
+  background:#141421;
+  padding:15px;
+  text-align:center;
+}
+.card{
+  background:#1b1b2b;
+  margin:15px;
+  padding:15px;
+  border-radius:12px;
+}
+.points{
+  font-size:24px;
+  color:#00ffd5;
+}
+button{
+  padding:12px;
+  border:none;
+  border-radius:8px;
+  font-weight:bold;
+  background:linear-gradient(135deg,#6a5cff,#00ffd5);
+}
+.ad-slot{
+  height:180px;
+  border:2px dashed #444;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#777;
+}
+footer{
+  text-align:center;
+  color:#666;
+  padding:15px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h2>💰 Ganhe Pontos</h2>
+</header>
+
+<div class="card">
+  <p>Seus Pontos:</p>
+  <div class="points" id="points">0 pts</div>
+</div>
+
+<div class="card">
+  <h3>⏱️ Ganhar Pontos</h3>
+  <p>Fique ativo no site</p>
+  <button onclick="addPoints()">Estou ativo</button>
+</div>
+
+<div class="card">
+  <h3>📢 Anúncio</h3>
+  <div class="ad-slot">
+    POPADS AQUI
+  </div>
+</div>
+
+<div class="card">
+  <h3>🎁 Recompensa</h3>
+  <p>200 pontos</p>
+  <button onclick="redeem()">Resgatar</button>
+</div>
+
+<footer>
+  © 2026 Reward Site
+</footer>
+
+<script>
+let points = 0;
+
+function addPoints(){
+  points += 10;
+  document.getElementById("points").innerText = points + " pts";
+}
+
+function redeem(){
+  if(points >= 200){
+    points -= 200;
+    alert("Recompensa solicitada!");
+  }else{
+    alert("Pontos insuficientes");
+  }
+  document.getElementById("points").innerText = points + " pts";
+}
+</script>
+
+</body>
+</html>
